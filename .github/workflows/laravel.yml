@@ -43,13 +43,14 @@ jobs:
           php-version: '8.2'
           extensions: mbstring, bcmath, pdo, mysql
           coverage: xdebug
-      # 3. Install Depedencies
-      - name: Install Depedencies Composer
-        run: composer install
-      
-      # 4. Copy & Replace Env
+
+      # 3. Create Env
       - name: Replace Env
         run: cp .env.example .env
+
+      # 4. Install Depedencies
+      - name: Install Depedencies Composer
+        run: composer install
       
       # 5. Generate Key
       - name: Generate Key Env
